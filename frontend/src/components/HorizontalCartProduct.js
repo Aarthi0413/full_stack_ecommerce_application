@@ -44,8 +44,8 @@ const HorizontalCartProduct = ({category, heading}) => {
       <h1 className='text-xl font-bold py-4'>{heading}</h1>
 
       <div className='flex items-center gap-4 md:gap-6 overflow-scroll scrollbar-none transition-all' ref={scrollElement}>
-      <button className="bg-purple-100 rounded-full p-1 shadow-md absolute left-0 hidden md:block" onClick={scrollLeft}><FaAngleLeft /></button>
-      <button className="bg-purple-100 rounded-full p-1 shadow-md absolute right-0 hidden md:block" onClick={scrollRight}><FaAngleRight /></button> 
+      <button className="bg-purple-100 rounded-full p-4 shadow-md absolute left-0 hidden md:block" onClick={scrollLeft}><FaAngleLeft /></button>
+      <button className="bg-purple-100 rounded-full p-4 shadow-md absolute right-0 hidden md:block" onClick={scrollRight}><FaAngleRight /></button> 
       
         {
           loading ? (

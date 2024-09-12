@@ -1,5 +1,3 @@
-
-
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import displayCurrency from "../helpers/displayCurrency";
@@ -53,13 +51,15 @@ const OrderPage = () => {
   return (
     <div className="font-serif">
       <div className="p-4 w-full">
-        <input
-          type="text"
-          placeholder="Search your order..."
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-          className="mb-4 p-2 border rounded w-full max-w-md focus:outline-none focus:border-transparent focus-within:shadow"
-        />
+        {data.length > 0 && (
+          <input
+            type="text"
+            placeholder="Search your order..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="mb-4 p-2 border rounded w-full max-w-md focus:outline-none focus:border-transparent focus-within:shadow"
+          />
+        )}
         {filteredData.length === 0 && <p>No Orders Available</p>}
         {filteredData.map((item, index) => {
           const formattedDate = formatDate(new Date(item.createdAt));
@@ -139,4 +139,3 @@ const OrderPage = () => {
 };
 
 export default OrderPage;
-

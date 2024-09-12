@@ -21,8 +21,8 @@ const productCategory = [
   },
   {
     id: 5,
-    lable: "Mouse",
-    value: "mouse",
+    lable: "Sofa",
+    value: "sofa",
   },
   {
     id:6,
@@ -36,6 +36,16 @@ const productCategory = [
   },
   {
     id: 8,
+    lable:"Bangles",
+    value:"bangles",
+  },
+  {
+    id: 9,
+    lable:"Play Station",
+    value:"play-station",
+  },
+  {
+    id:10,
     lable: "Watches",
     value: "watches",
   }

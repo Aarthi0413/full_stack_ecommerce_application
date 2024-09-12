@@ -7,14 +7,12 @@ const Home = () => {
   return (
     <div>
       <CategoryList/>
-      {/* <BannerProduct/> */}
-      <HorizontalCartProduct category={"table-lamps"} heading={"Popular Table-Lamps"}/>
-      <HorizontalCartProduct category={"airpods"} heading={"Top Airpods"}/>
-      <VerticalCartProduct category={"blankets"} heading={"Trending Watches"}/>
-      <VerticalCartProduct category={"speakers"} heading={"Bluetooth Speakers"}/>
-      <VerticalCartProduct category={"earphones"} heading={"Popular Mobiles"}/>
-      <VerticalCartProduct category={"watches"} heading={"Best Smart Watches"}/>
-      <VerticalCartProduct category={"televisions"} heading={"Televisions"}/>
+      <VerticalCartProduct category={"play-station"} heading={"Play Station"}/>
+      <VerticalCartProduct category={"table-lamps"} heading={"Table-Lamps"}/>
+      <VerticalCartProduct category={"blankets"} heading={"Blankets"}/>
+      <VerticalCartProduct category={"sofa"} heading={"Sofa's"}/>
+      <VerticalCartProduct category={"bangles"} heading={"Bangles"}/>
+      <HorizontalCartProduct category={"earphones"} heading={"Earphones"}/>
     </div>
   )
 }

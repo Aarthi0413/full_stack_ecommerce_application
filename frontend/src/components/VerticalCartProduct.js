@@ -10,7 +10,7 @@ const VerticalCartProduct = ({category, heading}) => {
     const [data, setDate] = useState([])
     const [loading, setLoading] = useState(false)
     const loadingList = new Array(12).fill(null)
-    const [scroll, setScroll] = useState(0)
+    // const [scroll, setScroll] = useState(0)
     const scrollElement = useRef()
 
     const {fetchUserAddToCart} = useContext(Context);
@@ -44,8 +44,8 @@ const VerticalCartProduct = ({category, heading}) => {
       <h1 className='text-xl font-bold py-4'>{heading}</h1>
 
       <div className='flex items-center gap-4 md:gap-6 overflow-scroll scrollbar-none transition-all' ref={scrollElement}>
-      <button className="bg-purple-100 rounded-full p-1 shadow-md absolute left-0 hidden md:block" onClick={scrollLeft}><FaAngleLeft /></button>
-      <button className="bg-purple-100 rounded-full p-1 shadow-md absolute right-0 hidden md:block" onClick={scrollRight}><FaAngleRight /></button> 
+      <button className="bg-purple-100 rounded-full p-4 shadow-md absolute left-0 hidden md:block" onClick={scrollLeft}><FaAngleLeft /></button>
+      <button className="bg-purple-100 rounded-full p-4 shadow-md absolute right-0 hidden md:block" onClick={scrollRight}><FaAngleRight /></button> 
         {
           loading ? (
             loadingList.map((product,index)=>{
@@ -71,7 +71,7 @@ const VerticalCartProduct = ({category, heading}) => {
               return(
                 <Link to={"product/"+product?._id} className='w-full min-w-[280px] md:min-w-[320px] max-w-[280px] md:max-w-[320px]  bg-white rounded-sm shadow-md'>
                 <div className='bg-purple-100 h-44 p-4 min-w-[120px] md:min-w-[145px] flex justify-center items-center'>
-                  <img src={product.productImage[0]} alt='products' className='object-scale-down h-full hover:scale-110 transition-all mix-blend-multiply'/>
+                  <img src={product.productImage[0]} alt='products' className='object-scale-down h-full hover:scale-125 transition-all mix-blend-multiply'/>
                 </div>
                 <div className='p-4 grid gap-1'>
                   <h1 className='font-medium text-base md:text-lg text-ellipsis line-clamp-1'>{product?.productName}</h1>
@@ -80,7 +80,7 @@ const VerticalCartProduct = ({category, heading}) => {
                     <p className='text-style '>{displayCurrency(product?.sellingPrice)}</p>
                     <p className='text-style text-red-500 line-through'>{displayCurrency(product?.price)}</p>
                   </div>
-                  <button className='px-3 py-1 bg-purple-600 rounded-full text-white text-sm' onClick={(e)=>handleAddToCart(e,product?._id)}>Add to cart</button>
+                  <button className='px-3 py-2 bg-purple-600 rounded-full text-white text-sm max-w-[100px] right-0' onClick={(e)=>handleAddToCart(e,product?._id)}>Add to cart</button>
                 </div>
                 </Link>
               )

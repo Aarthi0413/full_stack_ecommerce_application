@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import axios from "axios";
 import { GrSearch } from "react-icons/gr";
-import { FaUserAlt } from "react-icons/fa";
+import { FaCircleUser } from "react-icons/fa6";
 import { FaCartShopping } from "react-icons/fa6";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -54,7 +54,7 @@ const Header = () => {
       <div className="h-full container mx-auto flex items-center justify-between px-5">
         <div className="">
           <Link to={"/"}>
-            <h1 className="text-purple-800 font-serif font-bold">UPTREND</h1>
+            <h1 className="text-purple-800 font-serif font-bold shop-name">UPTREND</h1>
           </Link>
         </div>
 
@@ -62,10 +62,10 @@ const Header = () => {
           <input
             type="text"
             placeholder="search product here..."
-            className="w-full outline-none"
+            className="w-full outline-none p-2 bg-transparent"
             onChange={handleSearch} value={search}
           />
-          <div className="text-lg min-w-[50px] h-8 bg-purple-600 flex items-center justify-center rounded-r-full text-white">
+          <div className="text-lg min-w-[50px] h-10 bg-purple-600 flex items-center justify-center rounded-r-full text-white">
             <GrSearch />
           </div>
         </div>
@@ -74,10 +74,10 @@ const Header = () => {
           <div className="relative flex justify-center">
             {user?.data?._id && (
               <div
-                className="text-2xl cursor-pointer flex justify-center"
+                className="text-3xl cursor-pointer flex justify-center"
                 onClick={() => setMenuDisplay((prev) => !prev)}
               >
-                <FaUserAlt />
+                <FaCircleUser />
               </div>
             )}
 
@@ -100,7 +100,7 @@ const Header = () => {
             )}
           </div>
           {user?.data?._id && (
-            <Link to={"/cart"} className="text-2xl relative">
+            <Link to={"/cart"} className="text-3xl relative">
               <span>
                 <FaCartShopping />
               </span>
